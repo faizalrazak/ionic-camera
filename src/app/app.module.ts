@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SocialSharing } from '@ionic-native/social-sharing'
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     Camera,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

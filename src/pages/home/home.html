@@ -8,8 +8,9 @@
 
 <ion-content padding>
  
-	<img src="image/profile.jpg">
-	<button ion-button (click)=takePhoto()><ion-icon name="camera"></ion-icon> Take Photo</button>
-	<button ion-button (click)=sharePhoto()><ion-icon name="logo-facebook"></ion-icon> Share</button>
+	<img src="image/profile.jpg" *ngIf="!image">
+	<img src="{{image}}" *ngIf="image">
+	<button full ion-button (click)=takePhoto()><ion-icon name="camera"></ion-icon> Take Photo</button>
+	<button full ion-button (click)=sharePhoto()><ion-icon name="logo-facebook"></ion-icon> Share</button>
 
 </ion-content>

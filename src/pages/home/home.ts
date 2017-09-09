@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { SocialSharing } from '@ionic-native/social-sharing'
 
 
 @Component({
@@ -17,7 +18,7 @@ options: CameraOptions = {
 	 mediaType: this.camera.MediaType.PICTURE
 	}
 
-  constructor(public navCtrl: NavController, private camera:Camera) {
+  constructor(public navCtrl: NavController, private camera:Camera, public socialsharing:SocialSharing) {
 
   }
 
@@ -33,6 +34,10 @@ takePhoto(){
   }
 
   sharePhoto(){
-
+  	this.socialsharing.shareViaInstagram('sharing laa', this.image).then(() => {
+  // Success!
+}).catch(() => {
+  // Error!
+});
   }
 }
